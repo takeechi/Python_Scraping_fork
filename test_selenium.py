@@ -11,6 +11,6 @@ driver.get('https://www.google.co.jp/')
 html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser')
 
-ll = filter(lambda x: len(x) > 0, soup.text.split(' '))
+ll = [x for x in soup.text.split(' ') if len(x) > 0]
 for elem in ll:
     print(elem)

@@ -6,7 +6,7 @@ import chromedriver_binary
 option = Options()
 option.add_argument('--headless')
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=option)
 driver.get('https://www.google.co.jp/')
 html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser')
